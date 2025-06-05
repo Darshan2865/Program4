@@ -17,9 +17,29 @@ class Student {
         }
    }
 }
+class Course extends Student{
+    
+    int[] marks = new int[3];
+
+   Course(String name, String programe, String[] course,int[] marks){
+    super(name,programe,course);
+    this.marks = marks;
+   }
+
+    void display(){
+        System.out.println("marks less then 40 :");
+        for(int i=0;i<marks.length;i++){
+            if(marks[i] < 40){
+                System.out.println("Course Name: " + course[i] + "\tMarks: " + marks[i]);
+            }
+            
+        }
+    }
+}
 public class Program4{
     public static void main(String[] args) {
-        Student s=new Student("Darshan", "BCA",new String[]{"Java","BDA","MinorProject"});
-        s.show();
+        Course obj1  = new Course("Rohit", "BCA", new String[]{"java","python","devops"},new int[]{30,45,50});
+        obj1.show();
+        obj1.display();
     }
 }
